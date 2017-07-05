@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <table id="table">
+    </table>
+<body>
+    <script>
+        // mock data
+        var a = [{
+            id: 1,
+            sex: '100'
+        }, {
+            id: 2,
+            sex: '90'
+        }, {
+            id: 3,
+            sex: '90'
+        }, {
+            id: 4,
+            sex: '90'
+        }, {
+            id: 5,
+            sex: '90'
+        }]
+        var b = [{
+            id: 1,
+            name: 'a',
+            phone: '11'
+        }, {
+            id: 2,
+            name: 'b',
+            phone: '121'
+        }, {
+            id: 3,
+            name: 'c',
+            phone: '311'
+        }, {
+            id: 4,
+            name: 'c',
+            phone: '311'
+        }]
+        var alen = a.length,
+            blen = b.length,
+            len = alen,
+            flag = 'a',
+            i = 0,
+            result
+        // 补全长度
+        if(alen > blen) {
+            flag = 'a'
+            for(i = 0; i < alen - blen; i++) {
+                b.push({
+                    id: '',
+                    name: '',
+                    phone: ''
+                })
+            }
+        }
+        if(blen > alen) {
+            flag = 'b'
+            len = blen
+            for(i = 0; i < blen - alen; i++) {
+                a.push({
+                    id: '',
+                    sex: ''
+                })
+            }
+        }
+        // 合并
+        if(flag == 'b') {
+            for(i=0;i<len;i++) {
+                var id = a[i].id
+                b.find(function(item) {
+                    if(item.id == id) {
+                        item.sex = a[i].sex
+                    }
+                })
+            }
+            result = b
+        }
+        if(flag == 'a') {
+            for(i=0;i<len;i++) {
+                var id = b[i].id
+                a.find(function(item) {
+                    if(item.id == id) {
+                        item.phone = b[i].phone
+                        item.name = b[i].name
+                    }
+                })
+            }
+            result = a
+        }
+        console.log(result)
+        var trh = document.createElement('tr'),
+            table =document.getElementById('table')
+        for(key in result[0]) {
+            var th = document.createElement('th')
+            th.innerHTML = key
+            trh.appendChild(th)
+        }
+        // 插入
+        table.appendChild(trh)
+        // 生成表内容
+        for(i=0;i<len;i++) {
+            var trd = document.createElement('tr')
+            for(key in result[i]) {
+                var td = document.createElement('td')
+                td.innerHTML = result[i][key]
+                trd.appendChild(td)
+            }
+            table.appendChild(trd)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+   "context_title": {
+      "message": "Download using BitComet"
+   },
+   "description": {
+      "message": "helps to download files using BitComet"
+   },
+   "name": {
+      "message": "BitComet Download Extension for Chrome"
+   },
+   "popup_enable_bitcomet": {
+      "message": "Enable download using BitComet"
+   },
+   "popup_launch_program": {
+      "message": "Launch BitComet"
+   }
+}

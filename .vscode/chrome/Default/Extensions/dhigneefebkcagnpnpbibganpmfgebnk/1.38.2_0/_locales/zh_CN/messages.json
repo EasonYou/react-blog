@@ -1,0 +1,17 @@
+{
+   "context_title": {
+      "message": "使用BitComet下载"
+   },
+   "description": {
+      "message": "BitComet下载支持"
+   },
+   "name": {
+      "message": "BitComet Download Extension for Chrome"
+   },
+   "popup_enable_bitcomet": {
+      "message": "使用BitComet下载文件"
+   },
+   "popup_launch_program": {
+      "message": "启动BitComet"
+   }
+}

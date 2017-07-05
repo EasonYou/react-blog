@@ -1,0 +1,18 @@
+.navigator {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    // width: 100%;
+    .ant-menu {
+        border: 0;
+        color: #fff;
+        background-color: transparent;
+        display: block;
+    }
+    .ant-menu-item-selected {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+    }
+}

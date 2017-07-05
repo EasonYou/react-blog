@@ -1,0 +1,27 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "images/icon19_normal.png",
+      "default_popup": "popup.html",
+      "default_title": "__MSG_description__"
+   },
+   "content_scripts": [ {
+      "js": [ "js/capture.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "icons": {
+      "128": "images/install_logo.png",
+      "16": "images/menu_logo.png",
+      "48": "images/extension_logo.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq9zoYwXkmK8eV0APfg8jPsZw0hoE6dWs8i8qcN+jHUHgndH/IBpe8B6RZ+mypk/zw6IOVReCty3LXiJWANuQJStCUkno2eQyoR06X2AoiyJ67vziZ8WbQvRGD3UtA9mfedz1eHPzN0/I9oB7gAP99m+wL/eXf+EcWNjogWZXlujMGbRVZkIO2GrLInl5YhGzWLuzWw+Or1cyiJUxAxP6K1dmjaBBkFwfVeaIBB06TWoHNWTT4kHZmLH/KlGx0Q+tJSlVntrtYPe7lMmUIK1XuPHgP91eS0jjw9MN2yzGdhRUG3xtJRzkIlv+E1qLV9G6ugCBG+2jqdooiYWIdANsywIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_name__",
+   "permissions": [ "contextMenus", "cookies", "tabs", "webNavigation", "http://*/*", "https://*/*", "nativeMessaging" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.38.2"
+}
