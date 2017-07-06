@@ -3,13 +3,19 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 100;
     // width: 100%;
     .ant-menu {
         border: 0;
         color: #fff;
         background-color: transparent;
         display: block;
+    }
+    .ant-menu-item {
+        a {
+            color: #fff;
+            display: inline;
+        }
     }
     .ant-menu-item-selected {
         color: #fff;

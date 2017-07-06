@@ -3,15 +3,13 @@ import ReactDom from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './App.js'
 import createStore from './redux'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import Mock from './mock.js'
 
 const store = createStore()
 
 ReactDom.render(
-<Router>
   <Provider store={store}>
     <App />
-  </Provider>
-</Router>,
+  </Provider>,
   document.getElementById('root')
 )

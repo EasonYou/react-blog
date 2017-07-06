@@ -1,5 +1,6 @@
-import * as get from './gets.js'
-
+import * as getData from './getData.js'
+import * as clickTitle from './clickTitle.js'
 export default {
-    ...get
+    ...getData,
+    ...clickTitle
 }

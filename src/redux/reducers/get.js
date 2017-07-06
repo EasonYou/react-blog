@@ -1,5 +1,4 @@
 export const get = function (state = {}, action) {
-    console.log(action)
     switch (action.type) {
         case 'GET':
             return {
@@ -12,7 +11,6 @@ export const get = function (state = {}, action) {
 }
 
 export const post = function (state = {}, action) {
-    console.log(action, 'hehe')
     switch (action.type) {
         case 'POST':
             return {

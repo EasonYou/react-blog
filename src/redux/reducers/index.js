@@ -1,6 +1,9 @@
 import { get, post } from './get.js'
-console.log(post)
+import { clickTitle } from './clickTitle.js'
+import { homePage } from './homePage.js'
 export default {
     get,
-    post
+    post,
+    clickTitle,
+    homePage
 }

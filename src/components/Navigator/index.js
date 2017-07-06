@@ -1,42 +1,38 @@
 import { Row, Col, Menu, Icon } from 'antd'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './Navigator.scss'
 
-console.log(Link)
 
 class Bar extends Component {
   state = {
     current: 'mail',
   }
-  handleClick = (e) => {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
-  }
+
+  
   render() {
+    const { clickTitle } = this.props
     return (
       <Row className="navigator">
         <Col >
             <Menu
-              onClick={this.handleClick}
-              selectedKeys={[this.state.current]}
+              selectedKeys={[clickTitle.clickTitle]}
               mode="horizontal"
               className="menu-wrapper"
             >
-              <Menu.Item key="mail">
+              <Menu.Item key="home">
                 <Icon type="mail" />
                 <Link to="/">Home</Link>
               </Menu.Item>
-              <Menu.Item key="app">
+              <Menu.Item key="tag">
                 <Icon type="appstore" />
                 <Link to="/tag">Tag</Link>
               </Menu.Item>
-              <Menu.Item key="alipay">
+              <Menu.Item key="about">
                 <Icon type="smile" />
-                {/*<Link to="/about">about</Link>*/}
+                <Link to="/about">about</Link>
               </Menu.Item>
             </Menu>
         </Col>
@@ -45,4 +41,10 @@ class Bar extends Component {
   }
 }
 
-export default Bar
+function select(state) {
+  return {
+    clickTitle: state.clickTitle
+  }
+}
+
+export default connect(select)(Bar)
